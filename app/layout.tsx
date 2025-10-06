@@ -6,9 +6,9 @@ import './globals.css'
 import '@/styles/animations.css'
 
 export const metadata: Metadata = {
-  title: 'v0 App',
-  description: 'Created with v0',
-  generator: 'v0.app',
+  title: 'MechConnect',
+  description: 'Professional automotive service platform connecting mechanics, shops, and clients',
+  generator: 'MechConnect',
 }
 
 export default function RootLayout({

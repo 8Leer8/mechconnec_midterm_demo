@@ -24,6 +24,9 @@ export default function LoginPage() {
 
     // Simple demo authentication
     if ((username === "admin" || username === "headadmin") && password === "1234") {
+      // Store user role in localStorage
+      localStorage.setItem("role", username)
+      
       // Prefetch admin route for instant navigation
       router.prefetch("/admin")
       router.push("/admin")

@@ -1,0 +1,101 @@
+/* Page Transition Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Performance-optimized animations */
+.page-enter {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.card-enter {
+  animation: scaleIn 0.3s ease-out;
+}
+
+.sidebar-enter {
+  animation: slideIn 0.3s ease-out;
+}
+
+/* Optimized transitions for frequent interactions */
+.transition-optimized {
+  transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+  will-change: transform, box-shadow;
+}
+
+.transition-optimized:hover {
+  transform: translateY(-2px);
+}
+
+/* Loading state animations */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.loading-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Button optimizations */
+.btn-optimized {
+  transition: all 0.15s ease;
+  will-change: background-color, border-color, transform;
+}
+
+.btn-optimized:hover {
+  transform: translateY(-1px);
+}
+
+.btn-optimized:active {
+  transform: translateY(0);
+}
+
+/* Chart animations */
+.chart-container {
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .transition-optimized {
+    transition: none;
+    will-change: auto;
+  }
+  
+  .page-enter {
+    animation: none;
+  }
+}

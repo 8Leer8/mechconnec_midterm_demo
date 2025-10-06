@@ -47,9 +47,9 @@
 ```
 Route (app)                     Size    First Load JS
 ┌ ○ /                          2.16 kB    379 kB
-├ ○ /dashboard                 2.26 kB    379 kB
-├ ○ /dashboard/users           3.6 kB     381 kB
-├ ○ /dashboard/reports         3.12 kB    380 kB
+├ ○ /admin                     2.26 kB    379 kB
+├ ○ /admin/users               3.6 kB     381 kB
+├ ○ /admin/reports             3.12 kB    380 kB
 └ + other routes...
 ```
 

@@ -40,31 +40,31 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
       document.documentElement.classList.add("dark")
     }
 
-    // Prefetch dashboard routes for faster navigation
-    router.prefetch("/dashboard/users")
-    router.prefetch("/dashboard/shops")
-    router.prefetch("/dashboard/tokens")
-    router.prefetch("/dashboard/reports")
+    // Prefetch admin routes for faster navigation
+    router.prefetch("/admin/users")
+    router.prefetch("/admin/shops")
+    router.prefetch("/admin/tokens")
+    router.prefetch("/admin/reports")
   }, [router])
 
   // Memoize navigation links to prevent re-creation
   const adminLinks = useMemo(() => [
-    { href: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
-    { href: "/dashboard/users", label: "Users", icon: Users },
-    { href: "/dashboard/verifications", label: "Verifications", icon: UserCog },
-    { href: "/dashboard/shops", label: "Shops", icon: Store },
-    { href: "/dashboard/tokens", label: "Tokens", icon: Coins },
-    { href: "/dashboard/disputes", label: "Disputes", icon: AlertCircle },
-    { href: "/dashboard/reports", label: "Reports", icon: FileText },
-    { href: "/dashboard/financial", label: "Financial & Commission", icon: Wallet },
+    { href: "/admin", label: "Dashboard", icon: LayoutDashboard },
+    { href: "/admin/users", label: "Users", icon: Users },
+    { href: "/admin/verifications", label: "Verifications", icon: UserCog },
+    { href: "/admin/shops", label: "Shops", icon: Store },
+    { href: "/admin/tokens", label: "Tokens", icon: Coins },
+    { href: "/admin/disputes", label: "Disputes", icon: AlertCircle },
+    { href: "/admin/reports", label: "Reports", icon: FileText },
+    { href: "/admin/financial", label: "Financial & Commission", icon: Wallet },
   ], [])
 
   const headAdminLinks = useMemo(() => [
     ...adminLinks,
-    { href: "/dashboard/accounts", label: "Account Management", icon: UserCog },
-    { href: "/dashboard/pricing", label: "Token Pricing", icon: DollarSign },
-    { href: "/dashboard/settings", label: "Platform Settings", icon: Settings },
-    { href: "/dashboard/global-reports", label: "Global Reports", icon: BarChart3 },
+    { href: "/admin/accounts", label: "Account Management", icon: UserCog },
+    { href: "/admin/pricing", label: "Token Pricing", icon: DollarSign },
+    { href: "/admin/settings", label: "Platform Settings", icon: Settings },
+    { href: "/admin/global-reports", label: "Global Reports", icon: BarChart3 },
   ], [adminLinks])
 
   const links = useMemo(() => 

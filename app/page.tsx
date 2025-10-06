@@ -13,28 +13,29 @@ export default function LoginPage() {
   const [password, setPassword] = useState("")
   const [error, setError] = useState("")
 
-  // Prefetch dashboard on component mount for faster transitions
+  // Prefetch admin on component mount for faster transitions
   useEffect(() => {
-    router.prefetch("/dashboard")
+    router.prefetch("/admin")
   }, [router])
 
-  const handleLogin = (e: React.FormEvent) => {
+  const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault()
     setError("")
 
-    if (username === "admin" && password === "1234") {
-      localStorage.setItem("role", "admin")
-      // Prefetch dashboard route for instant navigation
-      router.prefetch("/dashboard")
-      router.push("/dashboard")
-    } else if (username === "headadmin" && password === "1234") {
-      localStorage.setItem("role", "headadmin")
-      // Prefetch dashboard route for instant navigation
-      router.prefetch("/dashboard")
-      router.push("/dashboard")
+    // Simple demo authentication
+    if ((username === "admin" || username === "headadmin") && password === "1234") {
+      // Prefetch admin route for instant navigation
+      router.prefetch("/admin")
+      router.push("/admin")
     } else {
-      setError("Invalid credentials.")
+      setError("Invalid credentials. Try admin/1234 or headadmin/1234")
     }
+  }
+
+  const handleViewDashboard = async () => {
+    // Prefetch admin route for instant navigation
+    router.prefetch("/admin")
+    router.push("/admin")
   }
 
   return (

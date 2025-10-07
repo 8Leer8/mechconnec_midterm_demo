@@ -24,21 +24,28 @@ export default function LoginPage() {
 
     // Simple demo authentication
     if ((username === "admin" || username === "headadmin") && password === "1234") {
-      // Store user role in localStorage
       localStorage.setItem("role", username)
       
-      // Prefetch admin route for instant navigation
       router.prefetch("/admin")
       router.push("/admin")
+    } else if (username === "shopowner" && password === "1234") {
+      localStorage.setItem("role", "shopowner")
+      
+      router.prefetch("/client/shopowners")
+      router.push("/client/shopowners")
     } else {
-      setError("Invalid credentials. Try admin/1234 or headadmin/1234")
+      setError("Invalid credentials. Try admin/1234, headadmin/1234, or shopowner/1234")
     }
   }
 
   const handleViewDashboard = async () => {
-    // Prefetch admin route for instant navigation
     router.prefetch("/admin")
     router.push("/admin")
+  }
+
+  const handleViewShopOwnerDashboard = async () => {
+    router.prefetch("/client/shopowners")
+    router.push("/client/shopowners")
   }
 
   return (
@@ -81,7 +88,25 @@ export default function LoginPage() {
             <Button type="submit" className="w-full h-11 text-base font-medium">
               Sign In
             </Button>
-            <p className="text-xs text-center text-muted-foreground mt-4">Demo: admin/1234 or headadmin/1234</p>
+            <div className="flex gap-2 mt-4">
+              <Button 
+                type="button" 
+                variant="outline" 
+                className="flex-1"
+                onClick={handleViewDashboard}
+              >
+                Admin Demo
+              </Button>
+              <Button 
+                type="button" 
+                variant="outline" 
+                className="flex-1"
+                onClick={handleViewShopOwnerDashboard}
+              >
+                Shop Owner Demo
+              </Button>
+            </div>
+            <p className="text-xs text-center text-muted-foreground mt-4">Demo: admin/1234, headadmin/1234, or shopowner/1234</p>
           </form>
         </CardContent>
       </Card>

@@ -42,7 +42,7 @@ const TopNavbar = React.memo(({
         </div>
         <div className="flex items-center gap-3">
           <span className="text-sm font-medium text-muted-foreground hidden sm:inline">
-            {role === "headadmin" ? "Head Admin" : "Admin"}
+            {role === "headadmin" ? "Head Admin" : role === "Shop Owner" ? "Shop Owner" : "Admin"}
           </span>
           <Button variant="ghost" size="icon" onClick={onToggleDarkMode} className="hover:bg-accent">
             {darkMode ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}

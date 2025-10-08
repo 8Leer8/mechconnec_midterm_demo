@@ -261,3 +261,81 @@ export const shopOwnerProfile = {
   joinDate: "2022-05-15",
   avatar: "/placeholder-user.jpg"
 }
+
+// Shop Item Interface
+export interface ShopItem {
+  id: number;
+  name: string;
+  description: string;
+  price: number;
+  category: string;
+  stock: number;
+  sold: number;
+  image?: string;
+}
+
+// Mock Shop Items Data
+export const mockShopItems: ShopItem[] = [
+  {
+    id: 1,
+    name: "Premium Motor Oil (5W-30)",
+    description: "High-quality synthetic motor oil for optimal engine performance",
+    price: 35.99,
+    category: "Engine",
+    stock: 24,
+    sold: 89,
+    image: "/placeholder.jpg"
+  },
+  {
+    id: 2,
+    name: "Brake Pads Set",
+    description: "Premium ceramic brake pads for superior stopping power",
+    price: 78.50,
+    category: "Brakes",
+    stock: 12,
+    sold: 45,
+    image: "/placeholder.jpg"
+  },
+  {
+    id: 3,
+    name: "Car Battery (12V)",
+    description: "Long-lasting automotive battery with 3-year warranty",
+    price: 149.99,
+    category: "Electrical",
+    stock: 8,
+    sold: 23,
+    image: "/placeholder.jpg"
+  },
+  {
+    id: 4,
+    name: "Air Filter",
+    description: "High-efficiency air filter for improved engine performance",
+    price: 22.99,
+    category: "Engine",
+    stock: 18,
+    sold: 67,
+    image: "/placeholder.jpg"
+  },
+  {
+    id: 5,
+    name: "Windshield Wipers",
+    description: "All-season windshield wipers for clear visibility",
+    price: 29.99,
+    category: "Accessories",
+    stock: 15,
+    sold: 34,
+    image: "/placeholder.jpg"
+  }
+]
+
+// Shop Item Categories
+export const itemCategories = [
+  "Engine",
+  "Brakes",
+  "Electrical",
+  "Tires",
+  "Accessories",
+  "Fluids",
+  "Filters",
+  "Tools"
+]
